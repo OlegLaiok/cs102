@@ -50,6 +50,12 @@ def gcd(a, b):
 
 
 def multiplicative_inverse(e, phi):
+    """
+    Euclid's extended algorithm for finding the multiplicative
+    inverse of two numbers.
+    >>> multiplicative_inverse(7, 40)
+    23
+    """
     x, xx, y, yy, phi1= 1, 0, 0, 1, phi
     while phi:
         q = e // phi
@@ -67,10 +73,8 @@ def generate_keypair(p, q):
         raise ValueError('p and q cannot be equal')
 
     n = p*q
-    # PUT YOUR CODE HERE
 
     phi = (p-1)*(q-1)
-    # PUT YOUR CODE HERE
 
     # Choose an integer e such that e and phi(n) are coprime
     e = random.randrange(1, phi)
